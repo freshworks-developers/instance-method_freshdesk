@@ -1,6 +1,15 @@
 <html>
   <head>
     <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+    <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+    <script
+    type="module"
+    src="https://unpkg.com/@freshworks/crayons/dist/crayons/crayons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/@freshworks/crayons/dist/crayons/crayons.js"
+  ></script>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <link
       rel="stylesheet"
@@ -11,8 +20,7 @@
 
   <body>
     <div class="fw-widget-wrapper">
-      <p>Congratulations on buliding your first app. You can utilize this space to build your app.</p>
-      <p id="apptext"></p>
+      <fw-button id="showModal">Show a Modal</fw-button>
     </div>
   </body>
   <script src="scripts/app.js"></script>

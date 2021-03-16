@@ -16,13 +16,18 @@ document.onreadystatechange = function() {
 };
 
 function onAppActivate() {
-  var textElement = document.getElementById('apptext');
-  var getContact = client.data.get('contact');
-  getContact.then(showContact).catch(handleErr);
+  document.getElementById('showModal').addEventListener('fwClick', showModal) 
+}
 
-  function showContact(payload) {
-    textElement.innerHTML = `Ticket created by ${payload.contact.name}`;
-  }
+function showModal() {
+  client.interface.trigger("showModal", {
+    title: "Sample Modal",
+    template: "modal.html"
+  }).then(function(data) {
+  // data - success message
+  }).catch(function(error) {
+  // error - error object
+  });
 }
 
 function handleErr(err) {
